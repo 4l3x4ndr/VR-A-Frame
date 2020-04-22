@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Entity-Component - Registry</title>
+    <meta name="description" content="Entity-Component - Registry" />
+<script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+  </head>
+  <body>
+    <a-scene
+      
+    >
+      <a-entity
+        text=" font: https://cdn.aframe.io/fonts/mozillavr.fnt;value: VR.World; color: white; size:"
+        position="4 2 -2 "
+        rotation="0 0 0"
+        scale="10 10 10"
+      >
+      </a-entity>
+      <a-entity id="mouseCursor" cursor="rayOrigin: mouse ; "></a-entity>
+      <a-entity position="0 0 0" look-controls>
+        <a-camera camera position="0 0 0">
+          <a-cursor material="color: pink"></a-cursor>
+        </a-camera>
+      </a-entity>
+
+      <a-entity id="light" light="type: ambient; color: #white"></a-entity>
+
+      <a-entity position="0 0.2 -2.2">
+        <a-plane
+          src="https://cdn.glitch.com/b11c3c63-3806-4832-95d9-8b43dd93f889%2F1200px-Statue_of_Liberty_7.jpg?v=1587447732681"
+          color="cyan"
+          scale="1.9 1.9 1.9 "
+          event-set__enter="_event: mouseenter; color: white;
+                                      event: mouseenter; scale: 2 2 2 ;
+                                  _event: mouseenter; rotation: 0 0 0"
+          event-set__leave="_event: mouseleave; color: cyan;
+                                      _event: mouseleave; scale: 1.9 1.9 1.9 ;
+                                      _event: mouseleave; link:href:statue_liberty.html"
+        >
+        </a-plane>
+      </a-entity>
+      <a-videosphere
+        rotation="0 360 0"
+        src="https://cdn.glitch.com/b11c3c63-3806-4832-95d9-8b43dd93f889%2FReal%20Time%20360%20video%20of%20the%20Aurora%20Borealis%20over%20Otto%20Lake%2C%20Alaska!.mp4?v=1587436567006"
+        play-on-window-click
+        play-on-vrdisplayactivate-or-enter-vr
+      >
+      </a-videosphere>
+
+      <a-entity position="-2 0.2 -1.7" rotation="0 30 0">
+        <a-plane
+          src="https://cdn.glitch.com/b11c3c63-3806-4832-95d9-8b43dd93f889%2Fportada_pyramids_800x669.jpg?v=1587483720593"
+          color="pink"
+          scale="1.9 1.9 1.9 "
+          event-set__enter="_event: mouseenter; color: white;
+                                      event: mouseenter; scale: 2 2 2 ;
+                                  _event: mouseenter; rotation: 0 0 0"
+          event-set__leave="_event: mouseleave; color: pink;
+                                      _event: mouseleave; scale: 1.9 1.9 1.9 ;
+                                      _event: mouseleave; link:href:statue_liberty.html"
+        >
+        </a-plane>
+      </a-entity>
+      <a-entity position="-1.5 0.2 0" rotation="-45 90 0">
+        <a-plane
+          src="https://cdn.glitch.com/b11c3c63-3806-4832-95d9-8b43dd93f889%2Fhqdefault.jpg?v=1587490990622"
+          color="pink"
+          scale="1.9 1.9 1.9 "
+          event-set__enter="_event: mouseenter; color: purple;
+                                      event: mouseenter; scale: 2 2 2 ;
+                                  _event: mouseenter; rotation: 0 0 0"
+          event-set__leave="_event: mouseleave; color: pink;
+                                      _event: mouseleave; scale: 1.9 1.9 1.9 ;
+                                      _event: mouseleave; link:href:fountain_dubai.html"
+        >
+        </a-plane>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>

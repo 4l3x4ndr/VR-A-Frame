@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>VR World</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="/style.css" />
+    <!-- import the webpage's javascript file -->
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <a-scene
+      vr-mode-ui="enabled: true"
+      environment="preset: contact; 
+                          skyColor: #112214; 
+                          horizonColor: #478d54; 
+                          ground: hills; 
+                          groundTexture: checkerboard; 
+                          groundColor: #4f3e4b; 
+                          groundColor2: #4d3c47; 
+                          dressing: none; 
+                          grid: none"
+    >
+      <a-assets>
+        <video
+          id="video"
+          style="display:none"
+          autoplay
+          loop
+          crossorigin="anonymous"
+          playsinline
+          webkit-playsinline
+        >
+          <source type="video/mp4" src="015" />
+        </video>
+      </a-assets>
+      <a-entity
+        id="mouseCursor"
+        cursor="rayOrigin: mouse ; fuse: true; timeout: 500"
+      ></a-entity>
+      <a-entity position="0 3 0" look-controls>
+        <a-camera camera position="0 0 0">
+          <a-cursor material="color: pink"></a-cursor>
+        </a-camera>
+      </a-entity>
+
+      <a-videosphere
+        rotation="0 360 0"
+        src="https://cdn.glitch.com/b11c3c63-3806-4832-95d9-8b43dd93f889%2FWestminster%20Bridge%20Big%20Ben%20-%20London%20England%20United%20Kingdom%20-%20Clip%20ID%2005%20360%20Video%20%20360Cities.mp4?v=1587479455762"
+        play-on-window-click
+        play-on-vrdisplayactivate-or-enter-vr
+      >
+      </a-videosphere>
+
+      <a-entity position="0 0.2 -1.2"  rotation="-45 0 0">
+        <a-plane
+          src="https://cdn.glitch.com/b11c3c63-3806-4832-95d9-8b43dd93f889%2Fhqdefault.jpg?v=1587490990622"
+          color="pink"
+                           scale="1.9 1.9 1.9 "
+
+          event-set__enter="_event: mouseenter; color: purple;
+                                      event: mouseenter; scale: 2 2 2 ;
+                                  _event: mouseenter; rotation: 0 0 0"
+          event-set__leave="_event: mouseleave; color: pink;
+                                      _event: mouseleave; scale: 1.9 1.9 1.9 ;
+                                      _event: mouseenter; link:href:fountain_dubai.html"
+        >
+        </a-plane>
+      </a-entity>
+
+      <a-entity position="1.2 0.2 0" rotation="-45 -90 0">
+        <a-plane
+          src="https://cdn.glitch.com/b11c3c63-3806-4832-95d9-8b43dd93f889%2Fauroras.jpg?v=1587489931947"
+          color="pink"
+                           scale="1.9 1.9 1.9 "
+
+          event-set__enter="_event: mouseenter; color: purple;
+                                      event: mouseenter; scale: 2 2 2 ;
+                                  _event: mouseenter; rotation: 0 0 0"
+          event-set__leave="_event: mouseleave; color: pink;
+                                      _event: mouseleave; scale: 1.9 1.9 1.9 ;
+                                      _event: mouseenter; link:href:index.html"
+        >
+        </a-plane>
+      </a-entity>
+      <a-entity position="-1.2 0.2 0" rotation="-45 90 0">
+        <a-plane
+          src="https://cdn.glitch.com/b11c3c63-3806-4832-95d9-8b43dd93f889%2Fportada_pyramids_800x669.jpg?v=1587483720593"
+          color="pink"
+                           scale="1.9 1.9 1.9 "
+
+          event-set__enter="_event: mouseenter; color: purple;
+                                      event: mouseenter; scale: 2 2 2 ;
+                                  _event: mouseenter; rotation: 0 0 0"
+          event-set__leave="_event: mouseleave; color: pink;
+                                      _event: mouseleave; scale: 1.9 1.9 1.9 ;
+                                      _event: mouseenter; link:href:pyramids.html"
+        >
+        </a-plane>
+      </a-entity>
+    </a-scene>
+  </body>
+</html>
